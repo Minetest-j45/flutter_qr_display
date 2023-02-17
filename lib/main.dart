@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'QR Codes Testing',
+      title: 'Flutter QR Codes',
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: const MyHomePage(title: 'QR Codes Testing'),
+      home: const MyHomePage(title: 'Flutter QR Codes'),
     );
   }
 }
@@ -32,9 +32,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       appBar: AppBar(
-       title: Text(widget.title),
+        title: Text(widget.title),
       ),
       body: Center(
         child: Column(
@@ -44,13 +44,15 @@ class _MyHomePageState extends State<MyHomePage> {
               'Scan the following:',
             ),
             QrImage(
-              data: "this is some test data to show in my qr code, hello world!",
+              data:
+                  "this is some test data to show in my qr code, hello world!",
               version: QrVersions.auto,
-              size: 400,
+              //size: 400,
+              size: MediaQuery.of(context).size.width * 0.9,
             ),
           ],
         ),
-      ),// This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
